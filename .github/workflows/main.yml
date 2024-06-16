@@ -72,7 +72,7 @@ jobs:
           with:
             username: ${{ secrets.DOCKERHUB_USERNAME }}
             password: ${{ secrets.DOCKERHUB_TOKEN }}
-            repository: "${{ secrets.DOCKERHUB_TOKEN }}/loki_enhance_middleware"
+            repository: "${{ secrets.DOCKERHUB_USERNAME }}/loki_enhance_middleware"
             short-description: 'hijacks log push requests sent to loki and modifies it'
         - uses: gautamkrishnar/keepalive-workflow@v1
         -
