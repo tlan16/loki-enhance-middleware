@@ -72,6 +72,14 @@ jobs:
             push: true
             platforms: linux/amd64,linux/arm64
             tags: "tlan16/loki_enhance_middleware:latest"
+        - name: Docker Hub Description
+          uses: peter-evans/dockerhub-description@v3
+          with:
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKER_TOKEN }}
+            repository: "${{ secrets.DOCKERHUB_TOKEN }}/loki_enhance_middleware"
+            short-description: 'hijacks log push requests sent to loki and modifies it'
+        - uses: gautamkrishnar/keepalive-workflow@v1
         -
           name: Image digest
           run: echo ${{ steps.docker_build.outputs.digest }}
