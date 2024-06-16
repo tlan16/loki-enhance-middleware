@@ -70,7 +70,8 @@ jobs:
           with:
             # List of tags
             push: true
-            tags: "nihiue/loki_enhance_middleware:latest"
+            platforms: linux/amd64,linux/arm64
+            tags: "tlan16/loki_enhance_middleware:latest"
         -
           name: Image digest
           run: echo ${{ steps.docker_build.outputs.digest }}
